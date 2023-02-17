@@ -89,7 +89,7 @@ class Snake {
     let head = this.body[this.body.length - 1].copy();
     this.len++;
     this.body.push(head);
-    this.score
+    this.score++;
   }
 
   endGame() {
