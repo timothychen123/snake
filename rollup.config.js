@@ -8,7 +8,7 @@ module.exports = {
   treeshake: false,
   plugins: [
     copy({
-      targets: [{ src: "index.html", dest: "dist" }],
+      targets: [{ src: "snake.html", dest: "dist" }],
     }),
   ],
 };

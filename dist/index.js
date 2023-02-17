@@ -1,3 +1,65 @@
+let snake;
+let rez = 10;
+let food;
+let w;
+let h;
+
+function setup() {
+  createCanvas(400, 400);
+  w = floor(width / rez);
+  h = floor (height / rez);
+  frameRate(10);
+  snake = new Snake();
+  foodLocation();
+}
+
+function foodLocation() {
+  let x = floor(random(w));
+  let y = floor(random(h));
+  food = createVector(x, y);
+}
+
+function keyPressed() {
+  if (keyCode === LEFT_ARROW) {
+    snake.setDir(-1, 0);
+  } else if (keyCode === RIGHT_ARROW) {
+    snake.setDir(1, 0);
+  } else if (keyCode === DOWN_ARROW) {
+    snake.setDir(0, 1);
+  } else if (keyCode === UP_ARROW) {
+    snake.setDir(0, -1);
+  }
+}
+
+function draw() {
+  scale(rez);
+  textSize(2);
+  text("Score: " + snake.score, 0, 2);
+  background(220);
+  if (snake.eat(food)) {
+    foodLocation();
+  }
+  snake.update();
+  snake.show();
+
+  if (snake.endGame()) {
+    print("END GAME");
+    background(255, 0, 0);
+    noLoop();
+    var txt;
+    if (confirm("Do you wish to restart?")) {
+      setup();
+  } else {
+      txt = "See you next time!";
+  }
+    document.getElementById("demo").innerHTML = "txt";
+  }
+
+  noStroke();
+  fill(255, 0, 0);
+  rect(food.x, food.y, 1, 1);
+}
+
 class Snake {
 
   constructor() {
@@ -26,7 +88,7 @@ class Snake {
     let head = this.body[this.body.length - 1].copy();
     this.len++;
     this.body.push(head);
-    this.score++;
+    this.score;
   }
 
   endGame() {
