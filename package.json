@@ -1,0 +1,31 @@
+{
+  "name": "snake",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "web-dev-server --node-resolve --open --watch",
+    "build": "rollup --config"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timothychen123/snake.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timothychen123/snake/issues"
+  },
+  "homepage": "https://github.com/timothychen123/snake#readme",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@web/dev-server": "^0.1.35",
+    "rollup": "^2.79.1",
+    "rollup-plugin-copy": "^3.4.0"
+  },
+  "dependencies": {
+    "p5": "^1.5.0",
+    "p5.play": "^3.6.2"
+  }
+}
