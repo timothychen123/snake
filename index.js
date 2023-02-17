@@ -33,9 +33,9 @@ function keyPressed() {
 
 function draw() {
   scale(rez);
+  background(220);
   textSize(2);
   text("Score: " + snake.score, 0, 2);
-  background(220);
   if (snake.eat(food)) {
     foodLocation();
   }
