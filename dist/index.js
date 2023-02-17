@@ -49,6 +49,7 @@ function draw() {
     var txt;
     if (confirm("Do you wish to restart?")) {
       setup();
+      draw();
   } else {
       txt = "See you next time!";
   }
