@@ -47,7 +47,7 @@ function draw() {
     background(255, 0, 0);
     noLoop();
     var txt;
-    if (confirm("Do you wish to restart?")) {
+    if (confirm("Game Over! Do you wish to restart?")) {
       setup();
       draw();
   } else {
