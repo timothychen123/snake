@@ -43,15 +43,16 @@ function draw() {
   snake.show();
 
   if (snake.endGame()) {
-    print("END GAME");
-    background(255, 0, 0);
-    noLoop();
     var txt;
     if (confirm("Game Over! Do you wish to restart?")) {
-      setup();
-      draw();
+      snake.newSnake();
   } else {
+      noLoop();
       txt = "See you next time!";
+      background(255, 0, 0);
+      textSize(2);
+      fill (0, 0, 0);
+      text("Game Over", 10, 20);
   }
     document.getElementById("demo").innerHTML = "txt";
   }
@@ -64,6 +65,10 @@ function draw() {
 class Snake {
 
   constructor() {
+    this.newSnake();
+  }
+
+  newSnake() {
     this.len = 1;
     this.body = [];
     this.body[0] = createVector(floor(w/2), floor(h/2));
