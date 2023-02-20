@@ -46,13 +46,13 @@ function draw() {
     var txt;
     if (confirm("Game Over! Do you wish to restart?")) {
       snake.newSnake();
-  } else {
-      noLoop();
-      txt = "See you next time!";
-      background(255, 0, 0);
-      textSize(2);
-      fill (0, 0, 0);
-      text("Game Over", 10, 20);
+    } else {
+        noLoop();
+        txt = "See you next time!";
+        background(255, 0 ,0);
+        textSize(2);
+        fill (0, 0, 0);
+      text("Game Over", windowWidth / 2, windowHeight / 2);
   }
     document.getElementById("demo").innerHTML = "txt";
   }
