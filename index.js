@@ -50,10 +50,10 @@ function draw() {
     } else {
         noLoop();
         txt = "See you next time!";
-        background(255, 0 ,0);
+        background(210);
         textSize(2);
         fill (0, 0, 0);
-        text("Game Over", windowWidth / 2, windowHeight / 2);
+        text("Game Ended... Your score was " + snake.score, 0, 2);
     }
   }
 
