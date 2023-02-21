@@ -5,9 +5,9 @@ let w;
 let h;
 
 function setup() {
-  createCanvas(400, 400);
-  w = floor(width / rez);
-  h = floor (height / rez);
+  createCanvas(windowWidth, windowHeight);
+  w = floor(windowWidth / rez);
+  h = floor (windowHeight / rez);
   frameRate(10);
   snake = new Snake();
   foodLocation();
@@ -53,7 +53,7 @@ function draw() {
         background(255, 0 ,0);
         textSize(2);
         fill (0, 0, 0);
-        text("Game Over", 20, 20);
+        text("Game Over", windowWidth / 2, windowHeight / 2);
     }
   }
 
