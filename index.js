@@ -5,7 +5,7 @@ let w;
 let h;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(400, 400);
   w = floor(width / rez);
   h = floor (height / rez);
   frameRate(10);
@@ -31,6 +31,7 @@ function keyPressed() {
   }
 }
 
+
 function draw() {
   scale(rez);
   background(210);
@@ -52,9 +53,8 @@ function draw() {
         background(255, 0 ,0);
         textSize(2);
         fill (0, 0, 0);
-      text("Game Over", windowWidth / 2, windowHeight / 2);
-  }
-    document.getElementById("demo").innerHTML = "txt";
+        text("Game Over", 20, 20);
+    }
   }
 
   noStroke();
@@ -88,6 +88,7 @@ class Snake {
     head.x += this.xdir;
     head.y += this.ydir;
     this.body.push(head);
+
   }
 
   grow() {
@@ -128,6 +129,5 @@ class Snake {
       noStroke();
       rect(this.body[i].x, this.body[i].y, 1, 1);
     }
-
   }
 }
