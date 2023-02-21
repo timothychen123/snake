@@ -6,8 +6,8 @@ let h;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  w = floor(width / rez);
-  h = floor (height / rez);
+  w = floor(windowWidth / rez);
+  h = floor (windowHeight / rez);
   frameRate(10);
   snake = new Snake();
   foodLocation();
@@ -31,9 +31,10 @@ function keyPressed() {
   }
 }
 
+
 function draw() {
   scale(rez);
-  background(220);
+  background(210);
   textSize(2);
   text("Score: " + snake.score, 0, 2);
   if (snake.eat(food)) {
@@ -52,9 +53,8 @@ function draw() {
         background(255, 0 ,0);
         textSize(2);
         fill (0, 0, 0);
-      text("Game Over", windowWidth / 2, windowHeight / 2);
-  }
-    document.getElementById("demo").innerHTML = "txt";
+        text("Game Over", windowWidth / 2, windowHeight / 2);
+    }
   }
 
   noStroke();
@@ -88,6 +88,7 @@ class Snake {
     head.x += this.xdir;
     head.y += this.ydir;
     this.body.push(head);
+
   }
 
   grow() {
@@ -128,6 +129,5 @@ class Snake {
       noStroke();
       rect(this.body[i].x, this.body[i].y, 1, 1);
     }
-
   }
 }
